@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.Circle?>
+
+<HBox stylesheets="@/css/theme.css"
+      minWidth="900.0" minHeight="650.0"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.ProfileController">
+
+    <VBox spacing="30.0" alignment="TOP_CENTER" prefWidth="270.0"
+          style="-fx-background-color: #FA5E5B; -fx-padding: 30; -fx-border-color: rgba(0, 0, 0, 0.15); -fx-border-width: 0 2 0 0;">
+
+        <HBox alignment="CENTER" spacing="10" onMouseClicked="#goHome" style="-fx-cursor: hand;">
+            <Label styleClass="logo-text" style="-fx-text-fill: black; -fx-font-size: 32px;" text="Take One" />
+            <ImageView fitHeight="40.0" preserveRatio="true">
+                <Image url="@/images/logo.png" />
+            </ImageView>
+        </HBox>
+
+        <Region prefHeight="20.0" />
+
+        <ImageView fx:id="profileImageView" fitWidth="180.0" fitHeight="180.0" preserveRatio="true">
+            <Image url="@/images/default-avatar.png" />
+            <clip>
+                <Circle centerX="90" centerY="90" radius="90" />
+            </clip>
+        </ImageView>
+
+        <Label fx:id="usernameLabel" style="-fx-font-family: 'Impact'; -fx-font-size: 36px; -fx-text-fill: black;" text="USERNAME" />
+
+        <Region prefHeight="30.0" />
+
+        <VBox spacing="20.0" alignment="CENTER_LEFT">
+            <Label fx:id="moviesWatchedLabel" style="-fx-font-family: 'Impact'; -fx-font-size: 20px; -fx-text-fill: black;" text="0 MOVIES WATCHED" />
+            <Label fx:id="hoursWatchedLabel" style="-fx-font-family: 'Impact'; -fx-font-size: 20px; -fx-text-fill: black;" text="0 HOURS WATCHED" />
+            <Label fx:id="favGenreLabel" wrapText="true" style="-fx-font-family: 'Impact'; -fx-font-size: 20px; -fx-text-fill: black;" text="FAVORITE GENRE: N/A" />
+        </VBox>
+    </VBox>
+
+    <VBox spacing="30.0" HBox.hgrow="ALWAYS" style="-fx-background-color: #FA5E5B; -fx-padding: 30;">
+
+        <BorderPane>
+            <left>
+                <Button onAction="#handleBack" styleClass="icon-button" text="Back" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: black;" BorderPane.alignment="CENTER"/>
+            </left>
+            <right>
+                <HBox spacing="15.0" alignment="CENTER_RIGHT" BorderPane.alignment="CENTER">
+                    <Button onAction="#goToWatchlist" styleClass="icon-button" text="📋" style="-fx-font-size: 24px;" />                    <Button styleClass="icon-button" text="👤" style="-fx-font-size: 24px;" />
+                </HBox>
+            </right>
+        </BorderPane>
+
+        <VBox spacing="15.0" style="-fx-border-color: rgba(0, 0, 0, 0.15); -fx-border-width: 0 0 2 0; -fx-padding: 0 0 30 0;">
+            <Label style="-fx-font-family: 'Impact'; -fx-font-size: 28px; -fx-text-fill: white;" text="LAST WATCHED" />
+            <HBox fx:id="recentMoviesBox" spacing="15.0" alignment="CENTER_LEFT">
+            </HBox>
+        </VBox>
+
+        <VBox spacing="15.0" VBox.vgrow="ALWAYS" style="-fx-padding: 10 0 0 0;">
+            <Label style="-fx-font-family: 'Impact'; -fx-font-size: 28px; -fx-text-fill: white;" text="PREFERENCES" />
+
+            <HBox spacing="20.0" VBox.vgrow="ALWAYS" fillHeight="true">
+
+                <BarChart fx:id="genreChart" legendVisible="false" HBox.hgrow="ALWAYS" prefHeight="250.0" minHeight="250.0" animated="false">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM" tickLabelFill="black" minHeight="90.0" style="-fx-font-weight: bold;"/>
+                    </xAxis>
+                    <yAxis><NumberAxis side="LEFT" tickLabelFill="black"/></yAxis>
+                </BarChart>
+
+                <BarChart fx:id="periodChart" legendVisible="false" HBox.hgrow="ALWAYS" prefHeight="250.0" minHeight="250.0" animated="false">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM" tickLabelFill="black" minHeight="90.0" style="-fx-font-weight: bold;"/>
+                    </xAxis>
+                    <yAxis><NumberAxis side="LEFT" tickLabelFill="black"/></yAxis>
+                </BarChart>
+
+            </HBox>
+        </VBox>
+    </VBox>
+</HBox>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@/css/theme.css"
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.LoginController">
+
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="Take One" styleClass="logo-text"/>
+        <ImageView fitHeight="50.0" preserveRatio="true" translateY="-5.0">
+            <image>
+                <Image url="@/images/logo.png"/>
+            </image>
+        </ImageView>
+    </HBox>
+
+    <VBox maxWidth="300" spacing="15">
+        <TextField fx:id="emailField" promptText="Email" styleClass="search-bar"/>
+        <PasswordField fx:id="passwordField" promptText="Password" styleClass="search-bar"/>
+
+        <Button text="LOGIN" onAction="#handleLogin" maxWidth="Infinity" styleClass="filter-button"/>
+
+        <Label fx:id="errorLabel" textFill="MAROON" visible="false"/>
+
+        <Hyperlink style="-fx-text-fill: #3b3a39" text="Don't have an account? Register here." onAction="#goToRegister"/>
+    </VBox>
+</VBox>

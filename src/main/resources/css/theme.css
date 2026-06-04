@@ -1,0 +1,97 @@
+.root {
+    -fx-background-color: #FA5E5B;
+    -fx-font-family: "Impact";
+}
+
+.logo-text {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+}
+
+.search-bar {
+    -fx-font-size: 16px;
+    -fx-background-radius: 0;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+}
+
+.filter-button {
+    -fx-font-size: 15px;
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #d3d3d3);
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-padding: 5px 20px;
+}
+
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-font-size: 20px;
+    -fx-cursor: hand;
+    -fx-text-fill: black;
+}
+
+.icon-button:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.combo-box {
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #d3d3d3);
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-font-family: "Impact";
+    -fx-font-size: 14px;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: black;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: #f1f1f1;
+    -fx-width: 12px;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #bcbcbc;
+    -fx-background-radius: 0;
+}
+
+.filter-button {
+    -fx-cursor: hand;
+}
+
+.filter-button:hover {
+    -fx-background-color: #fdfdfd;
+}
+
+.filter-button .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.filter-button .arrow {
+    -fx-background-color: black;
+}
+
+.star {
+    -fx-font-family: "Segoe UI Symbol", "Arial", sans-serif;
+    -fx-font-size: 32px;
+    -fx-text-fill: #555555;
+    -fx-cursor: hand;
+}
+
+.star-filled {
+    -fx-text-fill: #FFD700;
+}

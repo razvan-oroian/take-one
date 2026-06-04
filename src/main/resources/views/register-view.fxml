@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@/css/theme.css"
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.RegisterController">
+
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="Take One" styleClass="logo-text"/>
+        <ImageView fitHeight="50.0" preserveRatio="true" translateY="-5.0">
+            <image>
+                <Image url="@/images/logo.png"/>
+            </image>
+        </ImageView>
+    </HBox>
+
+    <Label text="CREATE ACCOUNT" styleClass="logo-text" style="-fx-font-weight: bold; -fx-font-size: 18px;"/>
+
+    <VBox maxWidth="300" spacing="15">
+        <TextField fx:id="usernameField" promptText="Username" styleClass="search-bar"/>
+        <TextField fx:id="emailField" promptText="Email" styleClass="search-bar"/>
+        <PasswordField fx:id="passwordField" promptText="Password" styleClass="search-bar"/>
+
+        <Button text="REGISTER" onAction="#handleRegister" maxWidth="Infinity" styleClass="filter-button"/>
+
+        <Label fx:id="errorLabel" textFill="MAROON" visible="false" wrapText="true"/>
+
+        <Hyperlink style="-fx-text-fill: #3b3a39"  text="Already have an account? Login here." onAction="#goToLogin"/>
+    </VBox>
+</VBox>
